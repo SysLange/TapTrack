@@ -60,6 +60,7 @@ function createItem(item_id, item_name, item_image) {
 }
 
 function handleItemClick(item_id) {
+    const button = document.getElementById(item_id);
     const quantityContainer = document.getElementById(`quantity-container-${item_id}`);
     const quantitySpan = document.getElementById(`quantity-${item_id}`);
     const priceSpan = document.getElementById('price');
@@ -70,6 +71,11 @@ function handleItemClick(item_id) {
         console.error("Item mit ID " + item_id + " nicht in itemList gefunden.");
         return;
     }
+
+    button.disabled = true;
+    setTimeout(function() {
+        button.disabled = false;
+    }, 100);
 
     if (quantityContainer.classList.contains('hidden')) {
         quantityContainer.classList.remove('hidden');
