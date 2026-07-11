@@ -1,26 +1,26 @@
 [
     {
-        "id": "1",
+        "id": "0",
         "name": "Bier 1,5L",
-        "image": "bier.png",
+        "image": "drinks/bier.png",
         "price": 750
     },
     {
-        "id": "2",
+        "id": "1",
         "name": "Cola 0,5L",
-        "image": "cola.png",
+        "image": "drinks/cola.png",
+        "price": 450
+    },
+    {
+        "id": "2",
+        "name": "Fanta 0,5L",
+        "image": "drinks/fanta.png",
         "price": 450
     },
     {
         "id": "3",
-        "name": "Fanta 0,5L",
-        "image": "fanta.png",
-        "price": 450
-    },
-    {
-        "id": "0",
         "name": "Pfand",
-        "image": "pfand.png",
+        "image": "drinks/pfand.png",
         "price": -200
     }
 ]
