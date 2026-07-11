@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "name": "Bier 1,5L",
+        "image": "bier.png",
+        "price": 750
+    },
+    {
+        "id": "2",
+        "name": "Cola 0,5L",
+        "image": "cola.png",
+        "price": 450
+    },
+    {
+        "id": "3",
+        "name": "Fanta 0,5L",
+        "image": "fanta.png",
+        "price": 450
+    },
+    {
+        "id": "0",
+        "name": "Pfand",
+        "image": "pfand.png",
+        "price": -200
+    }
+]

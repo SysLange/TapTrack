@@ -1,5 +1,23 @@
-var itemsContainer = document.getElementById("items");
-console.log("taptrack.js loaded");
+const timestamp = new Date().setHours(0, 0, 0, 0);
+console.log("Timestamp: " + timestamp);
+
+var itemList = []
+
+window.onload = function() {
+    const userName = getCookie("userIdentifier");
+
+    if (!userName) {
+        const input = prompt("Bitte geben Sie einen Namen ein:");
+        
+        // Wenn der Nutzer etwas eingegeben hat (nicht abbrechen gedrückt)
+        if (input !== null && input.trim() !== "") {
+            setCookie("userIdentifier", input, 24);
+            alert("Willkommen, " + input + "! Dein Name wurde für 24h gespeichert.");
+        }
+    } else {
+        console.log("Nutzer bereits bekannt: " + userName);
+    }
+};
 
 function createItem(item_id, item_name, item_image) {
     var itemHTML = `
@@ -12,4 +30,22 @@ function createItem(item_id, item_name, item_image) {
     </button>
     `;
     itemsContainer.appendChild($(itemHTML))
+}
+
+function setCookie(name, value, hours) {
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    const expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
 }
