@@ -1,4 +1,5 @@
 let itemList = [];
+let total = 0;
 
 window.onload = async function() {
     let code = getCookie("sessionCode");
@@ -48,8 +49,8 @@ function createItem(item_id, item_name, item_image) {
 
     const itemHTML = `
     <button onclick="handleItemClick('${item_id}')" id="${item_id}" class="relative flex aspect-square w-full flex-col items-center justify-between rounded-xl border-3 bg-neutral-400 p-1">
-        <div class="absolute top-1 right-1 flex hidden h-10 w-10 items-center justify-center rounded-full border border-black bg-red-500">
-            <span class="text-xl font-bold text-white">0</span>
+        <div id="quantity-container-${item_id}" class="absolute top-1 right-1 flex hidden h-10 w-10 items-center justify-center rounded-full border border-black bg-red-500">
+            <span id="quantity-${item_id}" class="text-xl font-bold text-white">0</span>
         </div>
         <img width="1000" height="1000" class="aspect-square w-3/4 rounded-xl" src="${item_image}" />
         <span class="font-sans text-xl">${item_name}</span>
@@ -59,7 +60,44 @@ function createItem(item_id, item_name, item_image) {
 }
 
 function handleItemClick(item_id) {
-    console.log(itemList);
+    const quantityContainer = document.getElementById(`quantity-container-${item_id}`);
+    const quantitySpan = document.getElementById(`quantity-${item_id}`);
+    const priceSpan = document.getElementById('price');
+
+    const clickedItem = itemList.find(i => i.id == item_id);
+
+    if (!clickedItem) {
+        console.error("Item mit ID " + item_id + " nicht in itemList gefunden.");
+        return;
+    }
+
+    if (quantityContainer.classList.contains('hidden')) {
+        quantityContainer.classList.remove('hidden');
+    }
+
+    let currentQty = parseInt(quantitySpan.textContent);
+    quantitySpan.textContent = currentQty + 1;
+
+    total += clickedItem.price;
+    priceSpan.textContent = (total / 100).toFixed(2).replace('.', ',') + " €";
+}
+
+function resetOrder() {
+    itemList.forEach(i => {
+        const quantityContainer = document.getElementById(`quantity-container-${i.id}`);
+        const quantitySpan = document.getElementById(`quantity-${i.id}`);
+
+        if (quantityContainer && quantitySpan) {
+            quantityContainer.classList.add('hidden');
+            quantitySpan.textContent = '0';
+        }
+    });
+
+    total = 0;
+    const priceSpan = document.getElementById('price');
+    if (priceSpan) {
+        priceSpan.textContent = (total / 100).toFixed(2).replace('.', ',') + " €";
+    }
 }
 
 
