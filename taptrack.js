@@ -116,7 +116,7 @@ function confirmOrder() {
     if (total === 0) {
         return
     }
-    let locString = "/order.html?";
+    let locString = "/TapTrack/order.html?";
     for (const [key, value] of Object.entries(currentOrder)) {
         locString += `${encodeURIComponent(key)}=${encodeURIComponent(value)}&`;
     }
