@@ -1,4 +1,5 @@
 let itemList = [];
+let currentOrder = {};
 let total = 0;
 
 window.onload = async function() {
@@ -21,8 +22,8 @@ window.onload = async function() {
             
             setCookie("sessionCode", code, 24);
             success = true;
-            itemList.forEach(i => createItem(i.id, i.name, i.image));
-
+            itemList.forEach(i => createItem(i.id, i.name, i.image, i.price));
+            itemList.forEach(i => currentOrder[i.name] = 0);
         } catch (error) {
             console.error("Fehler beim Laden:", error);
             alert("Der Code '" + code + "' ist ungültig. Bitte versuchen Sie es erneut.");
@@ -43,17 +44,18 @@ async function getData(code) {
     return await response.json();
 }
 
-function createItem(item_id, item_name, item_image) {
+function createItem(item_id, item_name, item_image, item_price) {
     const container = document.getElementById('itemsContainer'); 
     if (!container) return;
 
     const itemHTML = `
-    <button onclick="handleItemClick('${item_id}')" id="${item_id}" class="relative flex aspect-square w-full flex-col items-center justify-between rounded-xl border-3 bg-neutral-400 p-1">
-        <div id="quantity-container-${item_id}" class="absolute top-1 right-1 flex hidden h-10 w-10 items-center justify-center rounded-full border border-black bg-red-500">
-            <span id="quantity-${item_id}" class="text-xl font-bold text-white">0</span>
+    <button onclick="handleItemClick('${item_id}')" id="${item_id}" class="relative flex aspect-square w-full flex-col items-center justify-between rounded-xl bg-neutral-50 p-1 shadow-sm inset-shadow-sm">
+        <div id="quantity-container-${item_id}" class="absolute top-1 right-1 flex hidden h-10 w-10 items-center justify-center rounded-full bg-green-400">
+        <span id="quantity-${item_id}" class="text-xl font-bold text-white">0</span>
         </div>
         <img width="1000" height="1000" class="aspect-square w-3/4 rounded-xl" src="${item_image}" />
         <span class="font-sans text-xl">${item_name}</span>
+        <span class="font-sans text-xl">Preis: ${(item_price / 100).toFixed(2).replace('.', ',') + " €"}</span>
     </button>`;
     
     container.insertAdjacentHTML('beforeend', itemHTML);
@@ -86,6 +88,10 @@ function handleItemClick(item_id) {
 
     total += clickedItem.price;
     priceSpan.textContent = (total / 100).toFixed(2).replace('.', ',') + " €";
+
+    // add to current order
+    currentOrder[clickedItem.name] = parseInt(quantitySpan.textContent);
+    currentOrder["total"] = total;
 }
 
 function resetOrder() {
@@ -104,6 +110,18 @@ function resetOrder() {
     if (priceSpan) {
         priceSpan.textContent = (total / 100).toFixed(2).replace('.', ',') + " €";
     }
+}
+
+function confirmOrder() {
+    if (total === 0) {
+        return
+    }
+    let locString = "/order.html?";
+    for (const [key, value] of Object.entries(currentOrder)) {
+        locString += `${encodeURIComponent(key)}=${encodeURIComponent(value)}&`;
+    }
+    locString = locString.slice(0, -1);
+    window.location.replace(locString);
 }
 
 
