@@ -9,6 +9,7 @@ window.onload = async function() {
         }
     }
 
+    let params = new URLSearchParams(document.location.search);
     const total = params.get("total");
     if (total) {
         const priceSpan = document.getElementById('price');
