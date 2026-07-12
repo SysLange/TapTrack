@@ -9,8 +9,7 @@ window.onload = async function() {
         }
     }
 
-    let params = new URLSearchParams(document.location.search);
-    const total = params.get("total");
+    const total = getCookie("total");
     if (total) {
         const priceSpan = document.getElementById('price');
         if (priceSpan) {
