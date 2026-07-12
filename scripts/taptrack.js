@@ -116,7 +116,7 @@ function confirmOrder() {
     if (total === 0) {
         return
     }
-    window.location.replace("/TapTrack/order.html?total=" + total);
+    window.location.replace("/order.html?total=" + total);
     setCookie("currentOrder", JSON.stringify(currentOrder), 1);
 }
 
