@@ -23,10 +23,12 @@ function createItem(item_name, item_qty) {
     if (!container) return;
 
     const itemHTML = `
-    <div class="flex flex-row items-center justify-between gap-5 rounded-xl bg-neutral-50 p-5 shadow-sm inset-shadow-sm">
-        <span class="font-sans text-xl">${item_name}</span>
-        <span class="font-sans text-2xl font-bold">${item_qty}x</span>
-    </div>`;
+    <div class="flex items-center justify-between py-2">
+        <span class="font-sans text-xl font-medium text-shadow-lg">${item_name}</span>
+        <span class="font-sans text-xl font-bold text-shadow-lg">${item_qty}</span>
+    </div>
+    <div class="h-px bg-neutral-300"></div>
+    `;
     
     container.insertAdjacentHTML('beforeend', itemHTML);
 }

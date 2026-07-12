@@ -11,20 +11,24 @@
     <script src="scripts/order.js"></script>
   </head>
   <body>
-    <div class="relative flex h-dvh w-screen flex-col bg-neutral-200">
-      <!-- overview -->
-      <div class="m-2.5 flex flex-col items-center justify-center gap-2.5 rounded-xl bg-green-300 p-2.5 shadow-sm inset-shadow-sm">
-        <span id="price" class="font-sans text-5xl font-bold text-shadow-lg">0,00 €</span>
+    <div class="flex h-dvh w-screen flex-col bg-neutral-300">
+      <!-- order price -->
+      <div class="my-2.5 flex items-center justify-center">
+        <span id="price" class="rounded-xl bg-neutral-50 p-2.5 font-sans text-5xl font-bold shadow-sm inset-shadow-sm text-shadow-lg">0,00 €</span>
       </div>
 
-      <!-- items -->
-      <div id="orderContainer" class="grid w-full scrollbar-none grid-cols-1 gap-2.5 overflow-y-auto p-2.5">
-        
+      <!-- order list -->
+      <div id="orderContainer" class="mx-5 flex-grow scrollbar-thin overflow-y-auto rounded-xl bg-neutral-50 p-2.5 shadow-sm inset-shadow-sm">
+        <div class="flex items-center justify-between py-2">
+          <span class="font-sans text-xl font-medium text-shadow-lg">Cola 0,5L</span>
+          <span class="font-sans text-xl font-bold text-shadow-lg">1</span>
+        </div>
+        <div class="h-px bg-neutral-300"></div>
       </div>
-      
-      <!-- finish -->
-      <div class="absolute right-0 bottom-5 left-0 flex items-center justify-center">
-        <button onclick="window.location.replace('')" class="rounded-full bg-green-500 px-15 py-5 font-sans text-2xl font-bold text-white">FERTIG</button>
+
+      <!-- done button -->
+      <div class="my-2.5 flex items-center justify-center">
+        <button onclick="window.location.replace('/TapTrack/')" class="rounded-xl bg-green-500 px-10 py-5 font-sans text-2xl font-bold text-white shadow-sm inset-shadow-sm text-shadow-lg">FERTIG</button>
       </div>
     </div>
   </body>
