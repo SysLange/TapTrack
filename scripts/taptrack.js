@@ -116,12 +116,8 @@ function confirmOrder() {
     if (total === 0) {
         return
     }
-    let locString = "/TapTrack/order.html?";
-    for (const [key, value] of Object.entries(currentOrder)) {
-        locString += `${encodeURIComponent(key)}=${encodeURIComponent(value)}&`;
-    }
-    locString = locString.slice(0, -1);
-    window.location.replace(locString);
+    window.location.replace("/TapTrack/order.html?total=" + total);
+    setCookie("currentOrder", JSON.stringify(currentOrder), 1);
 }
 
 

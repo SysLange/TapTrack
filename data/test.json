@@ -50,7 +50,7 @@
     {
         "id": "8",
         "name": "Pfand",
-        "image": "drinks/pfand.png",
+        "image": "drinks/cup.png",
         "price": -200
     }
 ]

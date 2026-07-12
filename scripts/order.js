@@ -1,8 +1,9 @@
 window.onload = async function() {
-    let params = new URLSearchParams(document.location.search);
-    for (const [key, value] of params) {
-        if (value > 0) {
-            if (key !== "total") {
+    var currentOrder = getCookie("currentOrder");
+    if (currentOrder) {
+        currentOrder = JSON.parse(currentOrder);
+        for (const [key, value] of Object.entries(currentOrder)) {
+            if (value > 0 && key !== "total") {
                 createItem(key, value);
             }
         }
@@ -28,4 +29,15 @@ function createItem(item_name, item_qty) {
     </div>`;
     
     container.insertAdjacentHTML('beforeend', itemHTML);
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
 }
