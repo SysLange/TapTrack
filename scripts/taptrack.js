@@ -116,6 +116,7 @@ function confirmOrder() {
     if (total === 0) {
         return
     }
+    window.location.replace("order.html");
     setCookie("total", total, 1);
     setCookie("currentOrder", JSON.stringify(currentOrder), 1);
 }
