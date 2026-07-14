@@ -14,7 +14,7 @@ window.onload = function() {
     // Create item buttons for each item in the menu
     for (const item of menu) {
         createItem(item.id, item.name, item.size, "../src/" + item.image, item.price);
-        order[item.name + " " + item.size] = 0;
+        order[item.name + "|" + item.size] = 0;
     }
 }
 
@@ -42,19 +42,19 @@ function createItem(item_id, item_name, item_size, item_image, item_price) {
 function handleItemClick(item_id) {
     console.log("Item clicked: " + item_id);
     var item = menu.find(i => i.id === item_id);
-    order[item.name + " " + item.size] += 1;
+    order[item.name + "|" + item.size] += 1;
 
     // Update the quantity display for the clicked item
     var quantityElement = document.getElementById("quantity-" + item_id);
     quantityElement.classList.remove("hidden");
-    quantityElement.textContent = order[item.name + " " + item.size];
+    quantityElement.textContent = order[item.name + "|" + item.size];
 
     // update price
     price = 0;
     var priceLabel = document.getElementById("price");
     console.log("Order: ", order);
     for (const [itemName, quantity] of Object.entries(order)) {
-        const [name, size] = itemName.split(" ");
+        const [name, size] = itemName.split("|");
         const item = menu.find(i => i.name === name && i.size === size);
         price += item.price * quantity;
     }
