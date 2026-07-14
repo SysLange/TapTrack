@@ -12,7 +12,7 @@ window.onload = function() {
 
     // If menu is not set, redirect to home page
     if (!menu) {
-        window.location.href = "/";
+        window.location.href = "/TapTrack";
     }
 
     // Create item buttons for each item in the order
@@ -29,7 +29,7 @@ function createItem(item_name, item_qty) {
 
     const itemHTML = `
     <div class="flex items-center justify-between py-2">
-        <span class="font-sans text-xl font-medium text-shadow-lg">${item_name}</span>
+        <span class="font-sans text-xl font-medium text-shadow-lg">${item_name.replace("|", " ")}</span>
         <span class="font-sans text-xl font-bold text-shadow-lg">${item_qty}</span>
     </div>
     <div class="h-px bg-neutral-300"></div>
