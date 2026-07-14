@@ -1,0 +1,56 @@
+[
+    {
+        "id": "0",
+        "name": "Fassbier 0,5L",
+        "image": "drinks/bier.png",
+        "price": 1050
+    },
+    {
+        "id": "1",
+        "name": "Fassbier 1,0L",
+        "image": "drinks/bier.png",
+        "price": 1800
+    },
+    {
+        "id": "2",
+        "name": "Radler 0,5L",
+        "image": "drinks/bier.png",
+        "price": 1050
+    },
+    {
+        "id": "3",
+        "name": "Radler 1,0L",
+        "image": "drinks/bier.png",
+        "price": 1800
+    },
+    {
+        "id": "4",
+        "name": "Cola 0,5L",
+        "image": "drinks/coca-cola.png",
+        "price": 1000
+    },
+    {
+        "id": "5",
+        "name": "Cola Zero 0,5L",
+        "image": "drinks/coca-cola-zero.png",
+        "price": 1000
+    },
+    {
+        "id": "6",
+        "name": "Fanta 0,5L",
+        "image": "drinks/fanta.png",
+        "price": 1000
+    },
+    {
+        "id": "7",
+        "name": "Vio Still 0,5L",
+        "image": "drinks/vio-still.png",
+        "price": 900
+    },
+    {
+        "id": "8",
+        "name": "Becherpfand",
+        "image": "drinks/cup.png",
+        "price": -300
+    }
+]
