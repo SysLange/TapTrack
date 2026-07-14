@@ -1,6 +1,6 @@
 window.onload = function() {
     if (getCookie("menu")) {
-        window.location.href = "/order";
+        window.location.href = "/TapTrack/order";
     }
 }
 

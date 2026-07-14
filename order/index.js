@@ -65,7 +65,7 @@ function handleItemClick(item_id) {
 
 function resetOrder() {
     for (const item of menu) {
-        order[item.name] = 0;
+        order[item.name + "|" + item.size] = 0;
         var quantityElement = document.getElementById("quantity-" + item.id);
         if (quantityElement) {
             quantityElement.classList.add("hidden");
