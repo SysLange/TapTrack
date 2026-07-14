@@ -221,8 +221,11 @@
   .my-2\.5 {
     margin-block: calc(var(--spacing) * 2.5);
   }
-  .my-5 {
-    margin-block: calc(var(--spacing) * 5);
+  .mt-30 {
+    margin-top: calc(var(--spacing) * 30);
+  }
+  .mb-5 {
+    margin-bottom: calc(var(--spacing) * 5);
   }
   .flex {
     display: flex;
@@ -388,10 +391,6 @@
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
-  }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-xl {
     font-size: var(--text-xl);
