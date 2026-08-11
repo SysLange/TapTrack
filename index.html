@@ -1,16 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TapTrack</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
+    <main class="grid h-dvh w-screen grid-cols-1 bg-neutral-400">
+      <div class="bg-neutral-200"></div>
+      <div class="flex items-center justify-center">
+        <form action="submit" class="flex flex-col items-center">
+          <label for="name">Name:</label>
+          <input type="text" name="name" class="bg-neutral-200" />
+
+          <label for="password">Password:</label>
+          <input type="password" name="password" class="bg-neutral-200" />
+          <input type="submit" value="Submit" class="bg-green-400" />
+        </form>
+      </div>
+      <div class="bg-neutral-200"></div>
     </main>
     <script src="index.js"></script>
   </body>
