@@ -1,6 +1,6 @@
 const supabaseUrl = 'https://enynvsqywboflqcphpkm.supabase.co/rest/v1/';
 const supabaseKey = 'sb_publishable_gj6uJi6ZxlRp7ZReynYFvQ_we71tYZX';
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 async function login() {
     const email = document.getElementById('email').value;
