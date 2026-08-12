@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <base href="https://syslange.github.io/TapTrack/">
+    <base href="https://syslange.github.io/TapTrack/" />
     <title>TapTrack</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -13,9 +13,35 @@
       <div class="bg-neutral-200"></div>
       <div class="flex items-center justify-center">
         <div class="flex flex-col items-center">
-          <input type="email" id="email" placeholder="Email address" required>
-          <input type="password" id="password" placeholder="Password" required>
-          <button onclick="login()">Log In</button>
+          <!-- Drop Down Stand Auswahl -->
+          <div class="relative w-75">
+            <select name="cars" id="cars" class="h-15 w-full appearance-none rounded-lg bg-neutral-100 pr-12 pl-5 font-semibold text-fuchsia-800">
+              <option value="" selected disabled hidden>Stand Wählen</option>
+              <option value="s1">Stand 1</option>
+              <option value="s2">Stand 2</option>
+              <option value="s3">Stand 3</option>
+              <option value="s4">Stand 4</option>
+            </select>
+
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center rounded-r-lg bg-orange-400 px-4 text-neutral-100">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+
+          <!--  -->
+          <div class="flex">
+            <label>
+              <input type="radio" name="zk" value="1" class="peer sr-only" checked />
+              <div class="h-15 w-37.5 rounded-l-lg bg-neutral-100 px-6 py-3 text-neutral-700 shadow-sm transition peer-checked:bg-orange-500 peer-checked:font-bold peer-checked:text-white">Zapfe</div>
+            </label>
+
+            <label>
+              <input type="radio" name="zk" value="1" class="peer sr-only" />
+              <div class="justify flex h-15 w-37.5 items-center rounded-r-lg bg-neutral-100 px-6 py-3 text-neutral-700 shadow-sm transition peer-checked:bg-orange-500 peer-checked:font-bold peer-checked:text-white">Kasse</div>
+            </label>
+          </div>
         </div>
       </div>
       <div class="bg-neutral-200"></div>
@@ -23,7 +49,7 @@
 
     <!-- Supabase Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
