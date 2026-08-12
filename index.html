@@ -12,10 +12,10 @@
     <main class="grid h-dvh w-screen grid-cols-1 bg-neutral-400">
       <div class="bg-neutral-200"></div>
       <div class="flex items-center justify-center">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center gap-5">
           <!-- Drop Down Stand Auswahl -->
           <div class="relative w-75">
-            <select name="cars" id="cars" class="h-15 w-full appearance-none rounded-lg bg-neutral-100 pr-12 pl-5 font-semibold text-fuchsia-800">
+            <select name="cars" id="cars" class="h-15 w-full appearance-none rounded-lg bg-neutral-100 pr-12 pl-5 font-semibold">
               <option value="" selected disabled hidden>Stand Wählen</option>
               <option value="s1">Stand 1</option>
               <option value="s2">Stand 2</option>
@@ -30,17 +30,13 @@
             </div>
           </div>
 
-          <!--  -->
-          <div class="flex">
-            <label>
-              <input type="radio" name="zk" value="1" class="peer sr-only" checked />
-              <div class="h-15 w-37.5 rounded-l-lg bg-neutral-100 px-6 py-3 text-neutral-700 shadow-sm transition peer-checked:bg-orange-500 peer-checked:font-bold peer-checked:text-white">Zapfe</div>
-            </label>
+          <!-- Passwort -->
+          <input type="password" class="h-15 w-75 rounded-lg bg-neutral-100 px-5 font-semibold" placeholder="Passwort" />
 
-            <label>
-              <input type="radio" name="zk" value="1" class="peer sr-only" />
-              <div class="justify flex h-15 w-37.5 items-center rounded-r-lg bg-neutral-100 px-6 py-3 text-neutral-700 shadow-sm transition peer-checked:bg-orange-500 peer-checked:font-bold peer-checked:text-white">Kasse</div>
-            </label>
+          <!-- Login Buttons -->
+          <div class="flex w-75 justify-between">
+            <button class="h-15 w-35 rounded-lg bg-orange-400 text-white">Kasse</button>
+            <button class="h-15 w-35 rounded-lg bg-orange-400 text-white">Zapfe</button>
           </div>
         </div>
       </div>
