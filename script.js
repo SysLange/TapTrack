@@ -22,7 +22,7 @@ function loginRegister() {
 
     if (email && password) {
         email = email + "@ben-lange.de";
-        console.log(email, password);
+        login(email, password)
     }
 }
 
@@ -32,6 +32,6 @@ function loginTap() {
 
     if (email && password) {
         email = email + "@ben-lange.de";
-        console.log(email, password);
+        login(email, password)
     }
 }
