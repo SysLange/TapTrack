@@ -19,9 +19,19 @@ async function login(email, password) {
 function loginRegister() {
     var email = document.getElementById("stand").value;
     var password = document.getElementById("password").value;
-    console.log(email, password);
+
+    if (email && passowrd) {
+        email = email + "@ben-lange.de";
+        console.log(email, password);
+    }
 }
 
 function loginTap() {
-    console.log("login tap")
+    var email = document.getElementById("stand").value;
+    var password = document.getElementById("password").value;
+
+    if (email && passowrd) {
+        email = email + "@ben-lange.de";
+        console.log(email, password);
+    }
 }
