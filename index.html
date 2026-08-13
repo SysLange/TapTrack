@@ -23,10 +23,10 @@
           <div class="relative w-75">
             <select id="stand" class="h-15 w-full appearance-none rounded-lg border bg-neutral-100 pr-12 pl-5 font-semibold">
               <option value="" selected disabled hidden>Stand Wählen</option>
-              <option value="s1">Stand 1</option>
-              <option value="s2">Stand 2</option>
-              <option value="s3">Stand 3</option>
-              <option value="s4">Stand 4</option>
+              <option value="schenke-1">Stand 1</option>
+              <option value="schenke-2">Stand 2</option>
+              <option value="schenke-3">Stand 3</option>
+              <option value="schenke-4">Stand 4</option>
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center rounded-r-lg border border-black bg-green-800 px-4 text-neutral-100">
               <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,8 +40,8 @@
 
           <!-- Login Buttons -->
           <div class="flex w-75 justify-between">
-            <button class="h-15 w-35 rounded-lg border border-black bg-green-800 font-semibold text-white">Kassieren</button>
-            <button class="h-15 w-35 rounded-lg border border-black bg-green-800 font-semibold text-white">Zapfen</button>
+            <button class="h-15 w-35 rounded-lg border border-black bg-green-800 font-semibold text-white" onclick="loginRegister()">Kassieren</button>
+            <button class="h-15 w-35 rounded-lg border border-black bg-green-800 font-semibold text-white" onclick="loginTap()">Zapfen</button>
           </div>
         </div>
       </div>
