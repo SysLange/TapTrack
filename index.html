@@ -12,50 +12,40 @@
     <main class="grid h-dvh w-screen grid-cols-1 bg-neutral-400">
       <!-- Logo -->
       <div class="flex flex-col items-center justify-center">
-        <img class="h-30 w-30" />
-        <span class="text-2xl font-semibold">TapTrack</span>
+        <img class="h-50 w-50" src="https://syslange.github.io/TapTrack/icon.png" />
+        <span class="text-3xl font-semibold">TapTrack</span>
       </div>
 
       <!-- Form -->
       <div class="flex items-center justify-center">
         <div class="flex flex-col items-center gap-5">
-          <!-- Drop Down Stand Auswahl -->
-          <div class="relative w-75">
-            <select id="stand" class="h-15 w-full appearance-none rounded-lg border bg-neutral-100 pr-12 pl-5 font-semibold">
-              <option value="" selected disabled hidden>Stand Wählen</option>
-              <option value="schenke-1">Stand 1</option>
-              <option value="schenke-2">Stand 2</option>
-              <option value="schenke-3">Stand 3</option>
-              <option value="schenke-4">Stand 4</option>
-            </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center rounded-r-lg border border-black bg-green-800 px-4 text-neutral-100">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
+          <!-- Fehlermeldung -->
+          <span id="fehlerSpan" class="font-semibold text-red-800"></span>
 
-          <!-- Passwort -->
-          <input id="password" type="password" class="h-15 w-75 rounded-lg border bg-neutral-100 px-5 font-semibold" placeholder="Passwort" />
+          <!-- Passwort Input -->
+          <input id="passwortInput" class="h-15 w-75 rounded-xl border-2 border-neutral-900 bg-neutral-100 px-5 font-semibold text-neutral-900" type="password" placeholder="Passwort" />
 
-          <!-- Login Buttons -->
-          <div class="flex w-75 justify-between">
-            <button class="h-15 w-35 rounded-lg border border-black bg-green-800 font-semibold text-white" onclick="loginRegister()">Kassieren</button>
-            <button class="h-15 w-35 rounded-lg border border-black bg-green-800 font-semibold text-white" onclick="loginTap()">Zapfen</button>
-          </div>
+          <!-- Kassieren Button -->
+          <button id="kassierenButton" class="h-15 w-75 rounded-xl border-2 border-neutral-900 bg-green-800">
+            <span class="font-semibold text-neutral-100">Kassieren</span>
+          </button>
+
+          <!-- Zapfen Button -->
+          <button id="zapfenButton" class="h-15 w-75 rounded-xl border-2 border-neutral-900 bg-green-800">
+            <span class="font-semibold text-neutral-100">Zapfen</span>
+          </button>
         </div>
       </div>
 
       <!-- Footer -->
       <div class="flex flex-col items-center justify-center">
-        <span>Made with ❤️ by</span>
-        <span>Ben Lange</span>
+        <span class="font-semibold text-neutral-900">Made with ❤️ by</span>
+        <span class="font-semibold text-neutral-900">Ben Lange</span>
       </div>
     </main>
 
     <!-- Supabase Client -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
     <script src="script.js"></script>
   </body>
 </html>
