@@ -20,7 +20,7 @@ function loginRegister() {
     var email = document.getElementById("stand").value;
     var password = document.getElementById("password").value;
 
-    if (email && passowrd) {
+    if (email && password) {
         email = email + "@ben-lange.de";
         console.log(email, password);
     }
@@ -30,7 +30,7 @@ function loginTap() {
     var email = document.getElementById("stand").value;
     var password = document.getElementById("password").value;
 
-    if (email && passowrd) {
+    if (email && password) {
         email = email + "@ben-lange.de";
         console.log(email, password);
     }
