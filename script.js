@@ -3,7 +3,7 @@ const supabaseKey = 'sb_publishable_gj6uJi6ZxlRp7ZReynYFvQ_we71tYZX';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 
-document.addEventListener('readystatechange', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     console.log("Trigger");
 });
 
