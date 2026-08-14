@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <base href="https://syslange.github.io/TapTrack/order/" />
+    <title>TapTrack</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="flex h-dvh w-screen flex-col bg-neutral-400">
+      <!-- HEADER -->
+      <div class="flex w-full grid-cols-3">
+        <button class="m-2.5 h-15 w-15 rounded-full border-2 border-neutral-900 bg-red-800">
+          <span class="font-semibold text-neutral-100">X</span>
+        </button>
+        <select class="m-2.5 grow rounded-xl border-2 border-neutral-900 bg-neutral-100 px-5 font-semibold text-neutral-900">
+          <option value="" hidden>Stand Wählen</option>
+          <option value="1">Stand 1</option>
+          <option value="2">Stand 2</option>
+          <option value="3">Stand 3</option>
+        </select>
+        <button class="m-2.5 h-15 w-15 rounded-full border-2 border-neutral-900 bg-green-800">
+          <span class="font-semibold text-neutral-100">OK</span>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <div class="w-full grow bg-green-400"></div>
+
+      <!-- Footer -->
+      <div class="flex h-20 w-full items-center justify-center">
+        <button class="m-2.5 h-15 w-45 rounded-xl border-2 border-neutral-900 bg-red-800">
+          <span class="font-semibold text-neutral-100">Log Out</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
