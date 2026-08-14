@@ -176,6 +176,9 @@
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
   .h-15 {
     height: calc(var(--spacing) * 15);
   }
