@@ -18,7 +18,7 @@ async function login(email, password) {
 }
 
 
-function kassierenAction() {
+async function kassierenAction() {
     var passwordInput = document.getElementById("passwortInput");
     var loginSuccess = await login("user@ben-lange.de", passwordInput.value)
 
@@ -28,7 +28,7 @@ function kassierenAction() {
 }
 
 
-function zapfenAction() {
+async function zapfenAction() {
     var passwordInput = document.getElementById("passwortInput");
     var loginSuccess = await login("user@ben-lange.de", passwordInput.value)
 
