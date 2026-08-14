@@ -3,6 +3,11 @@ const supabaseKey = 'sb_publishable_gj6uJi6ZxlRp7ZReynYFvQ_we71tYZX';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 
+document.addEventListener('readystatechange', async () => {
+    console.log("Trigger");
+});
+
+
 async function login(email, password) {
     const { data, error } = await supabaseClient.auth.signInWithPassword({
         email: email,
