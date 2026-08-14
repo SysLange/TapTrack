@@ -2,17 +2,28 @@ const supabaseUrl = 'https://enynvsqywboflqcphpkm.supabase.co';
 const supabaseKey = 'sb_publishable_gj6uJi6ZxlRp7ZReynYFvQ_we71tYZX';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
+var loggedIn = false;
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const { data: { session }, error} = await supabaseClient.auth.getSession();
+    const { data: { session } } = await supabaseClient.auth.getSession();
 
     if (session) {
-        console.log("logged in");
+        setLoggedInState(true);
     } else {
         console.log("NOT logged in");
     }
 });
 
+// Hilfsfunktion für konsistente UI-Updates
+function setLoggedInState(isLoggedIn) {
+    loggedIn = isLoggedIn;
+    var passwordInput = document.getElementById("passwortInput");
+    
+    if (isLoggedIn) {
+        showSuccess("Eingeloggt");
+        if (passwordInput) passwordInput.disabled = true;
+    }
+}
 
 async function login(email, password) {
     const { data, error } = await supabaseClient.auth.signInWithPassword({
@@ -24,32 +35,36 @@ async function login(email, password) {
         showError("Login Fehlgeschlagen");
         return false;
     } else {
+        setLoggedInState(true); // Status & UI jetzt auch hier aktualisieren!
         return true;
     }
 }
 
+async function ensureLoggedIn() {
+    if (loggedIn) return true;
+
+    var passwordInput = document.getElementById("passwortInput");
+    return await login("user@ben-lange.de", passwordInput.value);
+}
 
 async function kassierenAction() {
-    var passwordInput = document.getElementById("passwortInput");
-    var loginSuccess = await login("user@ben-lange.de", passwordInput.value)
-
-    if (loginSuccess) {
-        console.log("redirect to Kassieren")
+    if (await ensureLoggedIn()) {
+        console.log("redirect to Kassieren");
     }
 }
-
 
 async function zapfenAction() {
-    var passwordInput = document.getElementById("passwortInput");
-    var loginSuccess = await login("user@ben-lange.de", passwordInput.value)
-
-    if (loginSuccess) {
-        console.log("redirect to Zapfen")
+    if (await ensureLoggedIn()) {
+        console.log("redirect to Zapfen");
     }
 }
-
 
 function showError(message) {
     var errorSpan = document.getElementById("fehlerSpan");
-    errorSpan.textContent = message;
+    if (errorSpan) errorSpan.textContent = message;
+}
+
+function showSuccess(message) {
+    var successSpan = document.getElementById("erfolgSpan");
+    if (successSpan) successSpan.textContent = message;
 }

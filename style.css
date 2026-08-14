@@ -239,6 +239,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-green-800 {
+    color: var(--color-green-800);
+  }
   .text-neutral-100 {
     color: var(--color-neutral-100);
   }
