@@ -10,11 +10,9 @@ async function login(email, password) {
     });
 
     if (error) {
-        showError("Login Fehlgeschlagen")
+        showError("Login Fehlgeschlagen");
         return false;
     } else {
-        alert("logged in");
-        console.log("User data:", data);
         return true;
     }
 }
@@ -22,11 +20,19 @@ async function login(email, password) {
 
 function kassierenAction() {
     var passwordInput = document.getElementById("passwortInput");
-    
+    var loginSuccess = login("user@ben-lange.de", passwordInput.value)
+    if (loginSuccess) {
+        console.log("redirect to Kassieren")
+    }
 }
 
 
 function zapfenAction() {
+    var passwordInput = document.getElementById("passwortInput");
+    var loginSuccess = login("user@ben-lange.de", passwordInput.value)
+    if (loginSuccess) {
+        console.log("redirect to Kassieren")
+    }
 }
 
 
