@@ -4,7 +4,13 @@ const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log("Trigger");
+    const { data: { session }, error} = await supabaseClient.auth.getSession();
+
+    if (session) {
+        console.log("logged in");
+    } else {
+        console.log("NOT logged in");
+    }
 });
 
 
