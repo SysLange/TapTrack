@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Hilfsfunktion für konsistente UI-Updates
 function setLoggedInState(isLoggedIn) {
     loggedIn = isLoggedIn;
     var passwordInput = document.getElementById("passwortInput");
     
     if (isLoggedIn) {
         showSuccess("Eingeloggt");
-        if (passwordInput) passwordInput.disabled = true;
+        if (passwordInput) passwordInput.classList.add("hidden");
     }
 }
 
@@ -35,7 +34,7 @@ async function login(email, password) {
         showError("Login Fehlgeschlagen");
         return false;
     } else {
-        setLoggedInState(true); // Status & UI jetzt auch hier aktualisieren!
+        setLoggedInState(true);
         return true;
     }
 }
