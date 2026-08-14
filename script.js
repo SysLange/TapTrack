@@ -20,7 +20,8 @@ async function login(email, password) {
 
 function kassierenAction() {
     var passwordInput = document.getElementById("passwortInput");
-    var loginSuccess = login("user@ben-lange.de", passwordInput.value)
+    var loginSuccess = await login("user@ben-lange.de", passwordInput.value)
+
     if (loginSuccess) {
         console.log("redirect to Kassieren")
     }
@@ -29,14 +30,15 @@ function kassierenAction() {
 
 function zapfenAction() {
     var passwordInput = document.getElementById("passwortInput");
-    var loginSuccess = login("user@ben-lange.de", passwordInput.value)
+    var loginSuccess = await login("user@ben-lange.de", passwordInput.value)
+
     if (loginSuccess) {
-        console.log("redirect to Kassieren")
+        console.log("redirect to Zapfen")
     }
 }
 
 
 function showError(message) {
     var errorSpan = document.getElementById("fehlerSpan");
-    errorSpan.value = message;
+    errorSpan.textContent = message;
 }
