@@ -48,7 +48,7 @@ async function ensureLoggedIn() {
 
 async function kassierenAction() {
     if (await ensureLoggedIn()) {
-        console.log("redirect to Kassieren");
+        window.location.replace("https://syslange.github.io/TapTrack/kassieren");
     }
 }
 
