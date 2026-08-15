@@ -2,7 +2,7 @@ const supabaseUrl = 'https://enynvsqywboflqcphpkm.supabase.co';
 const supabaseKey = 'sb_publishable_gj6uJi6ZxlRp7ZReynYFvQ_we71tYZX';
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-var audio = new Audio('/TapTrack/sounds/notification.mp3');
+var audio = new Audio('/TapTrack/sounds/notification.ogg');
 
 let debounceTimeout = null;
 
