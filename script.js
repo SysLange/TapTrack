@@ -48,13 +48,13 @@ async function ensureLoggedIn() {
 
 async function kassierenAction() {
     if (await ensureLoggedIn()) {
-        window.location.replace("https://syslange.github.io/TapTrack/kassieren");
+        window.location.replace("/TapTrack/kassieren");
     }
 }
 
 async function zapfenAction() {
     if (await ensureLoggedIn()) {
-        console.log("redirect to Zapfen");
+        window.location.replace("/TapTrack/zapfen");
     }
 }
 

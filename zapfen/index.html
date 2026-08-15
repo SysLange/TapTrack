@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <base href="/TapTrack/zapfen/" />
+    <title>TapTrack</title>
+    <link rel="stylesheet" href="/TapTrack/src/style.css" />
+  </head>
+  <body>
+    <main class="relative flex h-dvh w-screen flex-col bg-neutral-400">
+      <!-- Header -->
+      <div class="flex w-full grid-cols-3">
+        <select id="StandSelect" class="m-2.5 h-15 grow rounded-xl border-2 border-neutral-900 bg-neutral-100 px-5 font-semibold text-neutral-900">
+          <option value="" hidden>Stand Wählen</option>
+          <option value="1">Stand 1</option>
+          <option value="2">Stand 2</option>
+          <option value="3">Stand 3</option>
+        </select>
+      </div>
+
+      <!-- Seperation -->
+      <div class="h-px w-full bg-neutral-900"></div>
+
+      <!-- List -->
+      <div class="grow overflow-auto">
+        <div id="queueContainer" class="m-5 grid grow grid-cols-1 gap-5">
+          
+        </div>
+      </div>
+
+      <!-- Seperation -->
+      <div class="h-px w-full bg-neutral-900"></div>
+
+      <!-- Footer -->
+      <div class="flex h-20 w-full items-center justify-center">
+        <button onclick="window.location.replace('/TapTrack')" class="m-2.5 h-15 w-45 rounded-xl border-2 border-neutral-900 bg-red-800">
+          <span class="font-semibold text-neutral-100">Exit</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Supabase Client -->
+    <script src="/TapTrack/src/supabase.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
